@@ -100,71 +100,71 @@ const handleGenerate = async () => {
   setResults(data);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-For component updates, check the main CSVnest repository for latest versions.## Support```└── tsconfig.json│   └── App.tsx├── src/├── components/ui/  (shadcn components)│   └── README.md│   ├── package.json│   ├── index.ts│   │   └── generator.ts│   │   ├── export.ts│   ├── lib/│   │   └── ExportDialog.tsx│   │   ├── MetadataGeneratedDialog.tsx│   │   ├── ResultsPanel.tsx│   │   ├── FileUpload.tsx│   ├── components/├── ui-library/your-new-project/```## File Structure After Copy- Check for CSS conflicts with existing styles- Verify Tailwind CSS is properly configured**Q: Styling looks wrong**- Check TypeScript version (>= 4.5)- Make sure `@types/react` is installed**Q: TypeScript errors**- Check path aliases in tsconfig.json- Ensure all shadcn/ui components are installed in your project**Q: Import errors for shadcn components**## Troubleshooting- Theme variables- CSS classes in component files- Tailwind config colorsAll components use Tailwind CSS. Customize by modifying:### Styling```/>  }}    api.updateMetadata(id, fields);    // Your API call  onUpdateResult={(id, fields) => {  results={customResults}
-n<ResultsPanel/>  isGenerating={state.isGenerating}  imageType="vector"  // Custom image type<FileUpload```tsxPass props to customize behavior:### Settings & Configuration```n<FileUpload onGenerate={handleGenerate} />
+<FileUpload onGenerate={handleGenerate} />
+```
+
+### Settings & Configuration
+
+Pass props to customize behavior:
+
+```tsx
+<FileUpload
+  imageType="vector"  // Custom image type
+  isGenerating={state.isGenerating}
+/>
+
+<ResultsPanel
+  results={customResults}
+  onUpdateResult={(id, fields) => {
+    // Your API call
+    api.updateMetadata(id, fields);
+  }}
+/>
+```
+
+### Styling
+
+All components use Tailwind CSS. Customize by modifying:
+- Tailwind config colors
+- CSS classes in component files
+- Theme variables
+
+## Troubleshooting
+
+**Q: Import errors for shadcn components**
+- Ensure all shadcn/ui components are installed in your project
+- Check path aliases in tsconfig.json
+
+**Q: TypeScript errors**
+- Make sure `@types/react` is installed
+- Check TypeScript version (>= 4.5)
+
+**Q: Styling looks wrong**
+- Verify Tailwind CSS is properly configured
+- Check for CSS conflicts with existing styles
+
+## File Structure After Copy
+
+```
+your-new-project/
+├── ui-library/
+│   ├── components/
+│   │   ├── FileUpload.tsx
+│   │   ├── ResultsPanel.tsx
+│   │   ├── MetadataGeneratedDialog.tsx
+│   │   └── ExportDialog.tsx
+│   ├── lib/
+│   │   ├── export.ts
+│   │   └── generator.ts
+│   ├── index.ts
+│   ├── package.json
+│   └── README.md
+├── components/ui/  (shadcn components)
+├── src/
+│   └── App.tsx
+└── tsconfig.json
+```
+
+## Support
+
+For component updates, check the main CSVnest repository for latest versions.
