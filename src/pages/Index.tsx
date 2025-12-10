@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import GenerationControls from "@/components/GenerationControls";
-import FileUpload from "@/components/FileUpload";
-import ResultsPanel from "@/components/ResultsPanel";
+import { FileUpload, ResultsPanel } from "../../ui-library";
 import HowToUseButton from "@/components/HowToUseButton";
 import DeveloperBadge from "@/components/DeveloperBadge";
 
